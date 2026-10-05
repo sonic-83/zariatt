@@ -1,0 +1,4779 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ظرفیت | بازار هوشمند ظرفیت‌های صنعتی</title>
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+    --bg:#071019;
+    --bg2:#0b1622;
+    --card:#101e2d;
+    --card2:#142538;
+
+    --text:#f1f6fb;
+    --muted:#91a3b7;
+
+    --primary:#22d3a6;
+    --primary2:#13b98e;
+
+    --blue:#4ea5ff;
+    --purple:#9d7cff;
+
+    --yellow:#f5bd45;
+    --red:#fb7185;
+
+    --border:rgba(255,255,255,.09);
+
+    --radius:24px;
+
+    --max:1200px;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+        Tahoma,
+        Arial,
+        "Segoe UI",
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 80% 0%,
+            rgba(34,211,166,.07),
+            transparent 30%
+        ),
+        var(--bg);
+
+    color:var(--text);
+    line-height:1.9;
+    overflow-x:hidden;
+}
+
+body.light{
+    --bg:#f4f7fa;
+    --bg2:#ffffff;
+    --card:#ffffff;
+    --card2:#eef4f8;
+
+    --text:#172333;
+    --muted:#637287;
+
+    --border:rgba(20,35,50,.1);
+
+    background:
+        radial-gradient(
+            circle at 80% 0%,
+            rgba(34,211,166,.08),
+            transparent 30%
+        ),
+        var(--bg);
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+.container{
+    width:min(
+        calc(100% - 40px),
+        var(--max)
+    );
+
+    margin:auto;
+}
+
+section{
+    padding:110px 0;
+    position:relative;
+}
+
+h1,h2,h3{
+    line-height:1.35;
+    letter-spacing:-1px;
+}
+
+h2{
+    font-size:
+        clamp(32px,4.5vw,53px);
+
+    margin-bottom:20px;
+}
+
+p{
+    color:var(--muted);
+}
+
+.gradient{
+    background:
+        linear-gradient(
+            100deg,
+            var(--primary),
+            var(--blue),
+            var(--purple)
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+
+    color:var(--primary);
+
+    font-size:12px;
+    font-weight:900;
+
+    margin-bottom:15px;
+}
+
+.eyebrow::before{
+    content:"";
+
+    width:25px;
+    height:2px;
+
+    border-radius:10px;
+
+    background:var(--primary);
+}
+
+.section-head{
+    max-width:750px;
+    margin-bottom:50px;
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-5;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.grid{
+    position:absolute;
+    inset:0;
+
+    opacity:.13;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.05) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.05) 1px,
+            transparent 1px
+        );
+
+    background-size:60px 60px;
+}
+
+.glow{
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    border-radius:50%;
+
+    filter:blur(110px);
+
+    opacity:.12;
+}
+
+.glow.one{
+    right:-180px;
+    top:-180px;
+    background:var(--primary);
+}
+
+.glow.two{
+    left:-200px;
+    bottom:-200px;
+    background:var(--blue);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+    position:fixed;
+
+    top:0;
+    left:0;
+    right:0;
+
+    z-index:100;
+
+    background:
+        rgba(7,16,25,.78);
+
+    backdrop-filter:blur(20px);
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+body.light header{
+    background:
+        rgba(244,247,250,.82);
+}
+
+.nav{
+    height:78px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:25px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-mark{
+    width:43px;
+    height:43px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--blue)
+        );
+
+    color:#04151a;
+
+    font-size:21px;
+    font-weight:900;
+}
+
+.logo-text strong{
+    display:block;
+    font-size:16px;
+}
+
+.logo-text small{
+    display:block;
+
+    color:var(--muted);
+
+    font-size:9px;
+
+    letter-spacing:1.5px;
+
+    direction:ltr;
+}
+
+.nav-links{
+    display:flex;
+    gap:5px;
+}
+
+.nav-links a{
+    padding:8px 10px;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    border-radius:9px;
+
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:var(--text);
+
+    background:
+        rgba(255,255,255,.05);
+}
+
+.nav-buttons{
+    display:flex;
+    gap:8px;
+}
+
+.icon{
+    width:40px;
+    height:40px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:12px;
+
+    background:
+        var(--card);
+
+    color:var(--text);
+
+    cursor:pointer;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    padding-top:145px;
+}
+
+.hero-grid{
+    display:grid;
+
+    grid-template-columns:
+        1.05fr .95fr;
+
+    gap:80px;
+
+    align-items:center;
+}
+
+.badge{
+    display:inline-flex;
+
+    align-items:center;
+    gap:9px;
+
+    padding:7px 13px;
+
+    border:
+        1px solid rgba(34,211,166,.2);
+
+    border-radius:50px;
+
+    color:var(--primary);
+
+    background:
+        rgba(34,211,166,.06);
+
+    font-size:11px;
+    font-weight:800;
+
+    margin-bottom:22px;
+}
+
+.dot{
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    box-shadow:
+        0 0 0 6px
+        rgba(34,211,166,.09);
+}
+
+.hero h1{
+    font-size:
+        clamp(44px,6vw,77px);
+
+    margin-bottom:25px;
+}
+
+.hero-text{
+    max-width:690px;
+
+    font-size:16px;
+
+    margin-bottom:32px;
+}
+
+.actions{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:11px;
+}
+
+.btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:9px;
+
+    padding:
+        13px 19px;
+
+    border-radius:13px;
+
+    border:
+        1px solid var(--border);
+
+    font-size:12px;
+
+    font-weight:900;
+
+    transition:.25s;
+}
+
+.btn.primary{
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary2)
+        );
+
+    color:#031611;
+
+    border:none;
+
+    box-shadow:
+        0 15px 40px
+        rgba(34,211,166,.16);
+}
+
+.btn.primary:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 20px 50px
+        rgba(34,211,166,.25);
+}
+
+.btn.secondary{
+    background:var(--card);
+}
+
+.btn.secondary:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================================================
+   INDUSTRIAL VISUAL
+========================================================= */
+
+.visual{
+    position:relative;
+
+    height:510px;
+}
+
+.factory{
+    position:absolute;
+
+    inset:
+        30px 0 0 20px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #112337,
+            #08131e
+        );
+
+    box-shadow:
+        0 30px 90px
+        rgba(0,0,0,.32);
+
+    overflow:hidden;
+
+    transform:
+        perspective(1000px)
+        rotateY(-7deg)
+        rotateX(3deg);
+
+    transition:.5s;
+}
+
+body.light .factory{
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #edf4f8
+        );
+}
+
+.visual:hover .factory{
+    transform:
+        perspective(1000px)
+        rotateY(-2deg)
+        rotateX(1deg)
+        translateY(-5px);
+}
+
+.factory-header{
+    height:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 18px;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+.factory-title{
+    color:var(--muted);
+    font-size:10px;
+}
+
+.windows{
+    display:flex;
+    gap:5px;
+}
+
+.windows i{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--muted);
+
+    opacity:.5;
+}
+
+.factory-body{
+    padding:20px;
+}
+
+.factory-floor{
+    height:265px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(34,211,166,.03),
+            rgba(78,165,255,.05)
+        );
+}
+
+.floor-grid{
+    position:absolute;
+    inset:0;
+
+    opacity:.3;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.06) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.06) 1px,
+            transparent 1px
+        );
+
+    background-size:35px 35px;
+}
+
+.machine{
+    position:absolute;
+
+    width:75px;
+    height:60px;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1c4053,
+            #0d2333
+        );
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.2);
+}
+
+.machine::before{
+    content:"";
+
+    position:absolute;
+
+    width:26px;
+    height:26px;
+
+    border:
+        3px solid var(--primary);
+
+    border-radius:50%;
+
+    top:15px;
+    left:23px;
+
+    opacity:.65;
+}
+
+.machine::after{
+    content:"";
+
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    top:24px;
+    left:32px;
+}
+
+.m1{
+    top:40px;
+    right:55px;
+}
+
+.m2{
+    top:135px;
+    left:75px;
+}
+
+.m3{
+    bottom:25px;
+    right:150px;
+}
+
+.m4{
+    top:100px;
+    right:220px;
+}
+
+.capacity{
+    position:absolute;
+
+    padding:7px 11px;
+
+    border-radius:8px;
+
+    background:
+        rgba(34,211,166,.1);
+
+    color:var(--primary);
+
+    border:
+        1px solid
+        rgba(34,211,166,.2);
+
+    font-size:9px;
+    font-weight:800;
+}
+
+.c1{
+    top:25px;
+    right:40px;
+}
+
+.c2{
+    bottom:25px;
+    left:40px;
+}
+
+.order{
+    margin-top:15px;
+
+    padding:15px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:16px;
+
+    display:grid;
+
+    grid-template-columns:
+        auto 1fr auto;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:
+        rgba(255,255,255,.03);
+}
+
+.order-icon{
+    width:40px;
+    height:40px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:11px;
+
+    background:
+        rgba(78,165,255,.1);
+
+    color:var(--blue);
+}
+
+.order strong{
+    display:block;
+    font-size:11px;
+}
+
+.order span{
+    display:block;
+    color:var(--muted);
+    font-size:9px;
+}
+
+.match{
+    color:var(--primary);
+
+    font-size:18px;
+
+    font-weight:900;
+}
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:12px;
+
+    margin-top:50px;
+}
+
+.stat{
+    padding:20px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:18px;
+
+    background:
+        rgba(255,255,255,.025);
+}
+
+.stat strong{
+    display:block;
+
+    font-size:27px;
+
+    margin-bottom:2px;
+}
+
+.stat span{
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+/* =========================================================
+   PROBLEM
+========================================================= */
+
+.problem-grid{
+    display:grid;
+
+    grid-template-columns:
+        .85fr 1.15fr;
+
+    gap:55px;
+
+    align-items:center;
+}
+
+.big-problem{
+    padding:38px;
+
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(245,189,69,.08),
+            rgba(251,113,133,.03)
+        );
+
+    border:
+        1px solid
+        rgba(245,189,69,.15);
+}
+
+.big-problem .number{
+    font-size:58px;
+
+    font-weight:900;
+
+    color:var(--yellow);
+
+    line-height:1;
+}
+
+.big-problem h3{
+    font-size:25px;
+
+    margin:
+        18px 0 10px;
+}
+
+.big-problem p{
+    font-size:12px;
+}
+
+.problem-list{
+    display:grid;
+    gap:12px;
+}
+
+.problem{
+    display:grid;
+
+    grid-template-columns:
+        43px 1fr;
+
+    gap:13px;
+
+    padding:18px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:16px;
+
+    background:var(--card);
+}
+
+.problem-num{
+    width:38px;
+    height:38px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:11px;
+
+    background:
+        rgba(251,113,133,.08);
+
+    color:var(--red);
+
+    font-weight:900;
+
+    font-size:11px;
+}
+
+.problem strong{
+    display:block;
+
+    font-size:13px;
+
+    margin-bottom:3px;
+}
+
+.problem span{
+    display:block;
+
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+/* =========================================================
+   SOLUTION
+========================================================= */
+
+.cards{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+}
+
+.card{
+    padding:27px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:23px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.012)
+        );
+
+    transition:.3s;
+}
+
+body.light .card{
+    background:#fff;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+
+    border-color:
+        rgba(34,211,166,.23);
+}
+
+.card-icon{
+    width:49px;
+    height:49px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:15px;
+
+    background:
+        rgba(34,211,166,.08);
+
+    color:var(--primary);
+
+    font-size:20px;
+
+    margin-bottom:20px;
+}
+
+.card h3{
+    font-size:16px;
+
+    margin-bottom:9px;
+}
+
+.card p{
+    font-size:11px;
+}
+
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+
+.flow{
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:12px;
+}
+
+.flow-card{
+    text-align:center;
+
+    padding:24px 15px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:20px;
+
+    background:var(--card);
+
+    position:relative;
+}
+
+.flow-card:not(:last-child)::after{
+    content:"←";
+
+    position:absolute;
+
+    left:-14px;
+
+    top:50%;
+
+    transform:
+        translateY(-50%);
+
+    width:27px;
+    height:27px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:var(--bg);
+
+    color:var(--primary);
+
+    border:
+        1px solid var(--border);
+}
+
+.flow-number{
+    width:37px;
+    height:37px;
+
+    display:grid;
+    place-items:center;
+
+    margin:
+        0 auto 13px;
+
+    border-radius:50%;
+
+    background:
+        rgba(34,211,166,.1);
+
+    color:var(--primary);
+
+    font-weight:900;
+
+    font-size:11px;
+}
+
+.flow-card h3{
+    font-size:13px;
+
+    margin-bottom:7px;
+}
+
+.flow-card p{
+    font-size:9px;
+}
+
+/* =========================================================
+   INDUSTRIES
+========================================================= */
+
+.industry-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:13px;
+}
+
+.industry{
+    min-height:185px;
+
+    padding:24px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:21px;
+
+    background:var(--card);
+
+    transition:.3s;
+}
+
+.industry:hover{
+    transform:translateY(-5px);
+}
+
+.industry .emoji{
+    font-size:29px;
+
+    margin-bottom:19px;
+}
+
+.industry h3{
+    font-size:14px;
+
+    margin-bottom:7px;
+}
+
+.industry p{
+    font-size:10px;
+}
+
+/* =========================================================
+   TECHNOLOGY
+========================================================= */
+
+.tech-grid{
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+}
+
+.tech-visual{
+    height:450px;
+
+    position:relative;
+
+    display:grid;
+
+    place-items:center;
+}
+
+.tech-circle{
+    position:absolute;
+
+    border:
+        1px dashed
+        rgba(34,211,166,.22);
+
+    border-radius:50%;
+}
+
+.circle1{
+    width:230px;
+    height:230px;
+
+    animation:spin 20s linear infinite;
+}
+
+.circle2{
+    width:350px;
+    height:350px;
+
+    animation:
+        spin 28s linear
+        infinite reverse;
+}
+
+.circle3{
+    width:450px;
+    height:450px;
+
+    animation:spin 40s linear infinite;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.tech-core{
+    width:150px;
+    height:150px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(34,211,166,.2),
+            rgba(34,211,166,.03) 65%,
+            transparent 66%
+        );
+
+    border:
+        1px solid
+        rgba(34,211,166,.3);
+
+    z-index:2;
+}
+
+.tech-core-inner{
+    width:85px;
+    height:85px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--blue)
+        );
+
+    color:#031613;
+
+    font-size:28px;
+    font-weight:900;
+}
+
+.node{
+    position:absolute;
+
+    width:55px;
+    height:55px;
+
+    display:grid;
+    place-items:center;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:15px;
+
+    background:var(--card);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.2);
+
+    z-index:3;
+}
+
+.node.n1{
+    right:35px;
+    top:50px;
+}
+
+.node.n2{
+    left:35px;
+    top:90px;
+}
+
+.node.n3{
+    left:55px;
+    bottom:50px;
+}
+
+.node.n4{
+    right:50px;
+    bottom:35px;
+}
+
+.feature-list{
+    display:grid;
+
+    gap:13px;
+
+    margin-top:27px;
+}
+
+.feature{
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+}
+
+.check{
+    flex:0 0 25px;
+
+    width:25px;
+    height:25px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:8px;
+
+    color:var(--primary);
+
+    background:
+        rgba(34,211,166,.09);
+
+    font-size:11px;
+}
+
+.feature strong{
+    display:block;
+
+    font-size:12px;
+}
+
+.feature span{
+    display:block;
+
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+/* =========================================================
+   BUSINESS
+========================================================= */
+
+.business{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+}
+
+.revenue{
+    padding:29px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:23px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(34,211,166,.07),
+            rgba(78,165,255,.025)
+        );
+}
+
+.revenue-number{
+    font-size:37px;
+
+    font-weight:900;
+
+    color:var(--primary);
+
+    margin-bottom:9px;
+}
+
+.revenue h3{
+    font-size:15px;
+
+    margin-bottom:8px;
+}
+
+.revenue p{
+    font-size:10px;
+}
+
+/* =========================================================
+   MARKETPLACE
+========================================================= */
+
+.marketplace{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:12px;
+}
+
+.market{
+    padding:22px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:19px;
+
+    background:var(--card);
+
+    text-align:center;
+}
+
+.market-icon{
+    font-size:28px;
+
+    margin-bottom:12px;
+}
+
+.market h3{
+    font-size:12px;
+
+    margin-bottom:5px;
+}
+
+.market p{
+    font-size:9px;
+}
+
+/* =========================================================
+   COMPETITIVE
+========================================================= */
+
+.table-wrapper{
+    overflow:auto;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:22px;
+
+    background:var(--card);
+}
+
+table{
+    width:100%;
+
+    min-width:760px;
+
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:15px;
+
+    text-align:right;
+
+    border-bottom:
+        1px solid var(--border);
+
+    font-size:11px;
+}
+
+th{
+    color:var(--muted);
+}
+
+td:first-child{
+    font-weight:900;
+}
+
+.good{
+    color:var(--primary);
+
+    font-weight:900;
+}
+
+.neutral{
+    color:var(--muted);
+}
+
+/* =========================================================
+   ROADMAP
+========================================================= */
+
+.roadmap{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:17px;
+
+    position:relative;
+}
+
+.roadmap::before{
+    content:"";
+
+    position:absolute;
+
+    right:8%;
+    left:8%;
+
+    top:29px;
+
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--blue),
+            var(--purple)
+        );
+
+    opacity:.25;
+}
+
+.phase{
+    position:relative;
+
+    z-index:2;
+}
+
+.phase-dot{
+    width:58px;
+    height:58px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:var(--bg);
+
+    border:
+        2px solid var(--primary);
+
+    color:var(--primary);
+
+    font-weight:900;
+
+    margin-bottom:18px;
+}
+
+.phase h3{
+    font-size:14px;
+
+    margin-bottom:4px;
+}
+
+.phase small{
+    color:var(--primary);
+
+    font-size:9px;
+}
+
+.phase p{
+    margin-top:9px;
+
+    font-size:10px;
+}
+
+/* =========================================================
+   KPI
+========================================================= */
+
+.kpis{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:14px;
+}
+
+.kpi{
+    padding:24px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:20px;
+
+    background:var(--card);
+}
+
+.kpi-title{
+    color:var(--muted);
+
+    font-size:10px;
+
+    margin-bottom:10px;
+}
+
+.kpi-value{
+    font-size:31px;
+
+    font-weight:900;
+
+    margin-bottom:4px;
+}
+
+.kpi-note{
+    color:var(--muted);
+
+    font-size:9px;
+}
+
+/* =========================================================
+   RISKS
+========================================================= */
+
+.risks{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:13px;
+}
+
+.risk{
+    padding:22px;
+
+    display:grid;
+
+    grid-template-columns:
+        40px 1fr;
+
+    gap:13px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:18px;
+
+    background:var(--card);
+}
+
+.risk-icon{
+    width:40px;
+    height:40px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:12px;
+
+    background:
+        rgba(245,189,69,.08);
+
+    color:var(--yellow);
+}
+
+.risk strong{
+    display:block;
+
+    font-size:12px;
+
+    margin-bottom:4px;
+}
+
+.risk p{
+    font-size:9px;
+}
+
+/* =========================================================
+   TEAM
+========================================================= */
+
+.team{
+    padding:35px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:27px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(34,211,166,.06),
+            rgba(78,165,255,.04)
+        );
+
+    display:grid;
+
+    grid-template-columns:
+        auto 1fr;
+
+    gap:25px;
+
+    align-items:center;
+}
+
+.avatar{
+    width:88px;
+    height:88px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--blue)
+        );
+
+    color:#031512;
+
+    font-size:25px;
+
+    font-weight:900;
+}
+
+.team h3{
+    font-size:20px;
+
+    margin-bottom:5px;
+}
+
+.team p{
+    font-size:11px;
+}
+
+.tags{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    margin-top:13px;
+}
+
+.tag{
+    padding:5px 9px;
+
+    border-radius:8px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    color:var(--muted);
+
+    font-size:8px;
+}
+
+/* =========================================================
+   PITCH
+========================================================= */
+
+.pitch{
+    padding:40px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:26px;
+
+    background:var(--card);
+}
+
+.quote{
+    color:var(--primary);
+
+    font-size:70px;
+
+    line-height:.6;
+
+    opacity:.4;
+}
+
+.pitch p{
+    max-width:950px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    line-height:2.1;
+}
+
+/* =========================================================
+   REQUEST
+========================================================= */
+
+.request{
+    padding:65px;
+
+    border-radius:31px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        rgba(34,211,166,.18);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34,211,166,.11),
+            rgba(78,165,255,.07),
+            rgba(157,124,255,.05)
+        );
+}
+
+.request h2{
+    max-width:800px;
+}
+
+.request > p{
+    max-width:750px;
+
+    margin-bottom:27px;
+
+    font-size:13px;
+}
+
+.request-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:10px;
+
+    margin-bottom:28px;
+}
+
+.request-item{
+    padding:16px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:15px;
+
+    background:
+        rgba(0,0,0,.08);
+}
+
+.request-item strong{
+    display:block;
+
+    font-size:11px;
+
+    margin-bottom:3px;
+}
+
+.request-item span{
+    color:var(--muted);
+
+    font-size:8px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    padding:45px 0;
+
+    border-top:
+        1px solid var(--border);
+}
+
+.footer{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+}
+
+.footer strong{
+    font-size:15px;
+}
+
+.footer p{
+    font-size:9px;
+}
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+    opacity:0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+
+    transform:
+        translateY(0);
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero-grid,
+    .problem-grid,
+    .tech-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cards{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .industry-grid,
+    .marketplace{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .flow{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .flow-card:not(:last-child)::after{
+        display:none;
+    }
+
+    .roadmap{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .roadmap::before{
+        display:none;
+    }
+
+    .request-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+@media(max-width:700px){
+
+    .container{
+        width:
+            calc(100% - 28px);
+    }
+
+    section{
+        padding:75px 0;
+    }
+
+    .hero{
+        padding-top:120px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .visual{
+        height:390px;
+    }
+
+    .factory{
+        inset:
+            10px 0 0;
+    }
+
+    .stats,
+    .cards,
+    .flow,
+    .industry-grid,
+    .tech-grid,
+    .business,
+    .marketplace,
+    .roadmap,
+    .kpis,
+    .risks,
+    .request-grid{
+        grid-template-columns:1fr;
+    }
+
+    .team{
+        grid-template-columns:1fr;
+
+        text-align:center;
+    }
+
+    .avatar{
+        margin:auto;
+    }
+
+    .tags{
+        justify-content:center;
+    }
+
+    .request{
+        padding:32px 22px;
+    }
+
+    .footer{
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+}
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print{
+
+    header,
+    .nav-buttons,
+    .actions{
+        display:none!important;
+    }
+
+    body{
+        background:white!important;
+        color:#111!important;
+    }
+
+    section{
+        page-break-inside:avoid;
+
+        padding:
+            50px 0;
+    }
+
+    .card,
+    .kpi,
+    .risk,
+    .industry,
+    .request,
+    .team{
+        box-shadow:none!important;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="background">
+    <div class="grid"></div>
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+</div>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+<nav class="nav container">
+
+    <a href="#top" class="logo">
+
+        <div class="logo-mark">
+            ⬡
+        </div>
+
+        <div class="logo-text">
+
+            <strong>
+                ظرفیت
+            </strong>
+
+            <small>
+                INDUSTRIAL CAPACITY MARKET
+            </small>
+
+        </div>
+
+    </a>
+
+
+    <div class="nav-links">
+
+        <a href="#problem">
+            مسئله
+        </a>
+
+        <a href="#solution">
+            راهکار
+        </a>
+
+        <a href="#technology">
+            فناوری
+        </a>
+
+        <a href="#market">
+            بازار
+        </a>
+
+        <a href="#business">
+            درآمد
+        </a>
+
+        <a href="#roadmap">
+            نقشه راه
+        </a>
+
+        <a href="#request">
+            درخواست
+        </a>
+
+    </div>
+
+
+    <div class="nav-buttons">
+
+        <button
+            class="icon"
+            id="theme"
+            title="تغییر حالت"
+        >
+            ☼
+        </button>
+
+        <button
+            class="icon"
+            onclick="window.print()"
+            title="چاپ / PDF"
+        >
+            ⤓
+        </button>
+
+    </div>
+
+</nav>
+
+</header>
+
+
+<main id="top">
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+
+<div class="reveal">
+
+    <div class="badge">
+
+        <span class="dot"></span>
+
+        Industrial Tech Marketplace
+
+    </div>
+
+
+    <h1>
+
+        ظرفیت‌های بلااستفاده
+        <br>
+
+        <span class="gradient">
+            نباید بلااستفاده بمانند.
+        </span>
+
+    </h1>
+
+
+    <p class="hero-text">
+
+        <strong>ظرفیت</strong>
+        یک بازار هوشمند برای اتصال ظرفیت خالی
+        ماشین‌آلات، تجهیزات و خطوط تولید صنایع
+        به سفارش‌های واقعی بازار است؛
+        از CNC و برش لیزر تا چاپ سه‌بعدی،
+        ماشین‌کاری و خدمات تخصصی صنعتی.
+
+    </p>
+
+
+    <div class="actions">
+
+        <a
+            href="#solution"
+            class="btn primary"
+        >
+            مشاهده راهکار
+            ←
+        </a>
+
+        <a
+            href="#request"
+            class="btn secondary"
+        >
+            طرح پیشنهادی پارک
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- INDUSTRIAL DASHBOARD -->
+
+<div class="visual reveal">
+
+<div class="factory">
+
+
+<div class="factory-header">
+
+    <div class="windows">
+        <i></i>
+        <i></i>
+        <i></i>
+    </div>
+
+    <div class="factory-title">
+        Industrial Capacity Dashboard
+    </div>
+
+</div>
+
+
+<div class="factory-body">
+
+
+<div class="factory-floor">
+
+    <div class="floor-grid"></div>
+
+
+    <div class="machine m1"></div>
+
+    <div class="machine m2"></div>
+
+    <div class="machine m3"></div>
+
+    <div class="machine m4"></div>
+
+
+    <div class="capacity c1">
+        ظرفیت آزاد: ۳۲٪
+    </div>
+
+    <div class="capacity c2">
+        سفارش جدید ← تطبیق شد
+    </div>
+
+</div>
+
+
+<div class="order">
+
+    <div class="order-icon">
+        ⚙
+    </div>
+
+    <div>
+
+        <strong>
+            سفارش قطعه صنعتی
+        </strong>
+
+        <span>
+            CNC · ۵۰۰ قطعه · تحویل ۷ روزه
+        </span>
+
+    </div>
+
+    <div class="match">
+        94%
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+<div class="stats reveal">
+
+    <div class="stat">
+
+        <strong>
+            01
+        </strong>
+
+        <span>
+            بازار اولیه: خدمات تولید صنعتی
+        </span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>
+            B2B
+        </strong>
+
+        <span>
+            مدل کسب‌وکار صنعتی
+        </span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>
+            AI
+        </strong>
+
+        <span>
+            تطبیق سفارش و ظرفیت
+        </span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>
+            SaaS
+        </strong>
+
+        <span>
+            قابلیت توسعه خدمات سازمانی
+        </span>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     PROBLEM
+========================================================= -->
+
+<section id="problem">
+
+<div class="container">
+
+
+<div class="section-head reveal">
+
+    <div class="eyebrow">
+        مسئله
+    </div>
+
+    <h2>
+
+        کارخانه‌ها فقط
+        <span class="gradient">
+            محصول تولید نمی‌کنند؛
+        </span>
+
+        ظرفیت هم دارند.
+
+    </h2>
+
+    <p>
+
+        بسیاری از کارگاه‌ها و واحدهای صنعتی در بخشی
+        از ساعات یا روزهای کاری خود، ماشین‌آلات،
+        خطوط تولید یا تجهیزات تخصصی بلااستفاده دارند.
+        در طرف دیگر، کسب‌وکارهایی هستند که برای سفارش‌های
+        کوچک و متوسط به همین ظرفیت‌ها نیاز دارند.
+
+    </p>
+
+</div>
+
+
+<div class="problem-grid">
+
+
+<div class="big-problem reveal">
+
+    <div class="number">
+        01
+    </div>
+
+    <h3>
+        ظرفیت خالی + سفارش پراکنده
+    </h3>
+
+    <p>
+
+        یک شرکت ممکن است دستگاه CNC،
+        لیزر، پرینتر سه‌بعدی یا تجهیزات تولیدی
+        داشته باشد اما همه ساعات ظرفیت آن را
+        استفاده نکند.
+
+        همزمان شرکت دیگری ممکن است فقط
+        ۲۰۰ قطعه سفارش داشته باشد و به
+        چنین دستگاهی دسترسی نداشته باشد.
+
+    </p>
+
+</div>
+
+
+<div class="problem-list">
+
+
+<div class="problem reveal">
+
+    <div class="problem-num">
+        01
+    </div>
+
+    <div>
+
+        <strong>
+            پیدا کردن تأمین‌کننده مناسب
+        </strong>
+
+        <span>
+            بسیاری از سفارش‌های صنعتی از طریق
+            ارتباطات سنتی، جست‌وجو و واسطه‌ها پیدا می‌شوند.
+        </span>
+
+    </div>
+
+</div>
+
+
+<div class="problem reveal">
+
+    <div class="problem-num">
+        02
+    </div>
+
+    <div>
+
+        <strong>
+            ظرفیت‌های پنهان
+        </strong>
+
+        <span>
+            ظرفیت آزاد بسیاری از تجهیزات به شکل
+            عمومی قابل مشاهده و جست‌وجو نیست.
+        </span>
+
+    </div>
+
+</div>
+
+
+<div class="problem reveal">
+
+    <div class="problem-num">
+        03
+    </div>
+
+    <div>
+
+        <strong>
+            قیمت‌گذاری و زمان تحویل
+        </strong>
+
+        <span>
+            مشتری برای مقایسه قیمت، کیفیت و زمان
+            تحویل باید از چند تأمین‌کننده استعلام بگیرد.
+        </span>
+
+    </div>
+
+</div>
+
+
+<div class="problem reveal">
+
+    <div class="problem-num">
+        04
+    </div>
+
+    <div>
+
+        <strong>
+            سفارش‌های کوچک
+        </strong>
+
+        <span>
+            برخی ظرفیت‌ها برای سفارش‌های کوچک
+            و متوسط به شکل اقتصادی قابل دسترسی نیستند.
+        </span>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     SOLUTION
+========================================================= -->
+
+<section id="solution">
+
+<div class="container">
+
+
+<div class="section-head reveal">
+
+    <div class="eyebrow">
+        راهکار
+    </div>
+
+    <h2>
+
+        یک
+        <span class="gradient">
+            Marketplace صنعتی
+        </span>
+
+        برای ظرفیت‌های تولید
+
+    </h2>
+
+    <p>
+
+        ظرفیت، یک لایه دیجیتال روی بازار خدمات
+        تولید ایجاد می‌کند؛ جایی که شرکت‌ها می‌توانند
+        ظرفیت خود را عرضه کنند و مشتریان بتوانند
+        سفارش خود را به مناسب‌ترین ظرفیت بسپارند.
+
+    </p>
+
+</div>
+
+
+<div class="cards">
+
+
+<div class="card reveal">
+
+    <div class="card-icon">
+        ⚙
+    </div>
+
+    <h3>
+        ثبت ظرفیت
+    </h3>
+
+    <p>
+        شرکت مشخص می‌کند چه دستگاهی،
+        با چه مشخصاتی و در چه زمان‌هایی
+        ظرفیت آزاد دارد.
+    </p>
+
+</div>
+
+
+<div class="card reveal">
+
+    <div class="card-icon">
+        🔎
+    </div>
+
+    <h3>
+        جست‌وجوی ظرفیت
+    </h3>
+
+    <p>
+        مشتری می‌تواند براساس نوع فرآیند،
+        جنس، ابعاد، دقت، تیراژ و محل،
+        ظرفیت مناسب را پیدا کند.
+    </p>
+
+</div>
+
+
+<div class="card reveal">
+
+    <div class="card-icon">
+        🧠
+    </div>
+
+    <h3>
+        تطبیق هوشمند
+    </h3>
+
+    <p>
+        الگوریتم بر اساس ویژگی سفارش،
+        تجهیزات و زمان آزاد، بهترین
+        گزینه‌ها را پیشنهاد می‌کند.
+    </p>
+
+</div>
+
+
+<div class="card reveal">
+
+    <div class="card-icon">
+        💰
+    </div>
+
+    <h3>
+        استعلام و قیمت
+    </h3>
+
+    <p>
+        امکان دریافت پیشنهاد قیمت،
+        مقایسه و انتخاب تأمین‌کننده مناسب.
+    </p>
+
+</div>
+
+
+<div class="card reveal">
+
+    <div class="card-icon">
+        ⭐
+    </div>
+
+    <h3>
+        اعتبار تأمین‌کننده
+    </h3>
+
+    <p>
+        سابقه سفارش‌ها، امتیاز مشتریان،
+        کیفیت و زمان تحویل در پروفایل ثبت می‌شود.
+    </p>
+
+</div>
+
+
+<div class="card reveal">
+
+    <div class="card-icon">
+        📊
+    </div>
+
+    <h3>
+        تحلیل ظرفیت
+    </h3>
+
+    <p>
+        صاحبان تجهیزات می‌توانند میزان
+        استفاده از ماشین‌آلات خود را تحلیل کنند.
+    </p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     HOW IT WORKS
+========================================================= -->
+
+<section>
+
+<div class="container">
+
+
+<div class="section-head reveal">
+
+    <div class="eyebrow">
+        نحوه کار
+    </div>
+
+    <h2>
+
+        از سفارش
+        تا
+        <span class="gradient">
+            تولید
+
+        </span>
+
+        در چند مرحله
+
+    </h2>
+
+</div>
+
+
+<div class="flow">
+
+
+<div class="flow-card reveal">
+
+    <div class="flow-number">
+        01
+    </div>
+
+    <h3>
+        ثبت سفارش
+    </h3>
+
+    <p>
+        مشتری مشخصات قطعه،
+        تیراژ و زمان موردنیاز را ثبت می‌کند.
+    </p>
+
+</div>
+
+
+<div class="flow-card reveal">
+
+    <div class="flow-number">
+        02
+    </div>
+
+    <h3>
+        تحلیل سفارش
+    </h3>
+
+    <p>
+        سیستم ویژگی‌های فنی
+        سفارش را تحلیل می‌کند.
+    </p>
+
+</div>
+
+
+<div class="flow-card reveal">
+
+    <div class="flow-number">
+        03
+    </div>
+
+    <h3>
+        پیدا کردن ظرفیت
+    </h3>
+
+    <p>
+        ظرفیت‌های سازگار
+        شناسایی و رتبه‌بندی می‌شوند.
+    </p>
+
+</div>
+
+
+<div class="flow-card reveal">
+
+    <div class="flow-number">
+        04
+    </div>
+
+    <h3>
+        توافق
+    </h3>
+
+    <p>
+        مشتری پیشنهادها را مقایسه
+        و تأمین‌کننده را انتخاب می‌کند.
+    </p>
+
+</div>
+
+
+<div class="flow-card reveal">
+
+    <div class="flow-number">
+        05
+    </div>
+
+    <h3>
+        تولید و تحویل
+    </h3>
+
+    <p>
+        سفارش تولید و وضعیت
+        آن قابل پیگیری خواهد بود.
+    </p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     MARKET
+========================================================= -->
+
+<section id="market">
+
+<div class="container">
+
+
+<div class="section-head reveal">
+
+    <div class="eyebrow">
+        بازار هدف
+    </div>
+
+    <h2>
+
+        هر جا
+        <span class="gradient">
+            ظرفیت تولید
+        </span>
+
+        وجود دارد
+
+    </h2>
+
+    <p>
+        شروع بازار می‌تواند روی خدمات تولیدی
+        با فرآیندهای قابل استانداردسازی متمرکز شود
+        و سپس به صنایع پیچیده‌تر توسعه پیدا کند.
+    </p>
+
+</div>
+
+
+<div class="industry-grid">
+
+
+<div class="industry reveal">
+
+    <div class="emoji">
+        ⚙️
+    </div>
+
+    <h3>
+        CNC و ماشین‌کاری
+    </h3>
+
+    <p>
+        قطعات فلزی، آلومینیومی،
+        پلاستیکی و سفارش‌های دقیق.
+    </p>
+
+</div>
+
+
+<div class="industry reveal">
+
+    <div class="emoji">
+        🔥
+    </div>
+
+    <h3>
+        برش لیزر
+    </h3>
+
+    <p>
+        برش ورق، فلز، چوب و
+        سایر مواد قابل پردازش.
+    </p>
+
+</div>
+
+
+<div class="industry reveal">
+
+    <div class="emoji">
+        🖨️
+    </div>
+
+    <h3>
+        چاپ سه‌بعدی
+    </h3>
+
+    <p>
+        نمونه‌سازی سریع، قطعات خاص
+        و تولید تیراژ پایین.
+    </p>
+
+</div>
+
+
+<div class="industry reveal">
+
+    <div class="emoji">
+        🏗️
+    </div>
+
+    <h3>
+        ساخت و تولید
+    </h3>
+
+    <p>
+        خدمات ساخت قطعه و
+        عملیات تولیدی تخصصی.
+    </p>
+
+</div>
+
+
+<div class="industry reveal">
+
+    <div class="emoji">
+        🔩
+    </div>
+
+    <h3>
+        قالب‌سازی
+    </h3>
+
+    <p>
+        ساخت و ماشین‌کاری قالب‌ها
+        و قطعات تخصصی.
+    </p>
+
+</div>
+
+
+<div class="industry reveal">
+
+    <div class="emoji">
+        🧪
+    </div>
+
+    <h3>
+        آزمایشگاه‌ها
+    </h3>
+
+    <p>
+        امکان استفاده اشتراکی از
+        تجهیزات تخصصی آزمایشگاهی.
+    </p>
+
+</div>
+
+
+<div class="industry reveal">
+
+    <div class="emoji">
+        🔬
+    </div>
+
+    <h3>
+        تجهیزات تحقیقاتی
+    </h3>
+
+    <p>
+        دسترسی به تجهیزات گران‌قیمت
+        برای پروژه‌های پژوهشی.
+    </p>
+
+</div>
+
+
+<div class="industry reveal">
+
+    <div class="emoji">
+        🏭
+    </div>
+
+    <h3>
+        خطوط تولید
+    </h3>
+
+    <p>
+        استفاده از ظرفیت مازاد
+        خطوط و تجهیزات صنعتی.
+    </p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     TECHNOLOGY
+========================================================= -->
+
+<section id="technology">
+
+<div class="container tech-grid">
+
+
+<div class="tech-visual reveal">
+
+    <div class="tech-circle circle1"></div>
+
+    <div class="tech-circle circle2"></div>
+
+    <div class="tech-circle circle3"></div>
+
+
+    <div class="tech-core">
+
+        <div class="tech-core-inner">
+            AI
+        </div>
+
+    </div>
+
+
+    <div class="node n1">
+        ⚙
+    </div>
+
+    <div class="node n2">
+        📦
+    </div>
+
+    <div class="node n3">
+        📊
+    </div>
+
+    <div class="node n4">
+        🏭
+    </div>
+
+</div>
+
+
+<div class="reveal">
+
+    <div class="eyebrow">
+        فناوری
+    </div>
+
+    <h2>
+
+        هوش مصنوعی برای
+        <span class="gradient">
+            پیدا کردن بهترین ظرفیت
+        </span>
+
+    </h2>
+
+    <p style="font-size:13px">
+
+        ارزش اصلی محصول در ایجاد یک فهرست ساده
+        از کارگاه‌ها نیست؛ بلکه در ساخت موتور
+        تصمیم‌گیری برای انتخاب بهترین ظرفیت است.
+
+    </p>
+
+
+    <div class="feature-list">
+
+
+        <div class="feature">
+
+            <div class="check">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    تطبیق فنی سفارش و ماشین
+                </strong>
+
+                <span>
+                    مقایسه ویژگی‌های فنی سفارش
+                    با قابلیت‌های تجهیزات.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="check">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    بهینه‌سازی زمان
+                </strong>
+
+                <span>
+                    انتخاب ظرفیتی که بتواند
+                    سفارش را در بازه مناسب انجام دهد.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="check">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    پیش‌بینی ظرفیت
+                </strong>
+
+                <span>
+                    تخمین زمان‌های آزاد تجهیزات
+                    بر اساس سوابق سفارش‌ها.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="check">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    امتیازدهی تأمین‌کننده
+                </strong>
+
+                <span>
+                    ترکیب قیمت، کیفیت، زمان تحویل
+                    و سابقه در یک امتیاز قابل فهم.
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     MARKETPLACE
+========================================================= -->
+
+<section>
+
+<div class="container">
+
+
+<div class="section-head reveal">
+
+    <div class="eyebrow">
+        اکوسیستم
+    </div>
+
+    <h2>
+
+        سه طرف یک
+        <span class="gradient">
+            بازار جدید
+        </span>
+
+    </h2>
+
+</div>
+
+
+<div class="marketplace">
+
+
+<div class="market reveal">
+
+    <div class="market-icon">
+        🏭
+    </div>
+
+    <h3>
+        صاحب ظرفیت
+    </h3>
+
+    <p>
+        کارخانه، کارگاه یا مالک تجهیزات
+    </p>
+
+</div>
+
+
+<div class="market reveal">
+
+    <div class="market-icon">
+        📦
+    </div>
+
+    <h3>
+        سفارش‌دهنده
+    </h3>
+
+    <p>
+        شرکت یا کسب‌وکاری که قطعه نیاز دارد
+    </p>
+
+</div>
+
+
+<div class="market reveal">
+
+    <div class="market-icon">
+        🧠
+    </div>
+
+    <h3>
+        پلتفرم
+    </h3>
+
+    <p>
+        Matching، اعتماد، پرداخت و داده
+    </p>
+
+</div>
+
+
+<div class="market reveal">
+
+    <div class="market-icon">
+        🤝
+    </div>
+
+    <h3>
+        ارزش مشترک
+    </h3>
+
+    <p>
+        استفاده بهتر از دارایی‌های موجود
+    </p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     BUSINESS MODEL
+========================================================= -->
+
+<section id="business">
+
+<div class="container">
+
+
+<div class="section-head reveal">
+
+    <div class="eyebrow">
+        مدل درآمدی
+    </div>
+
+    <h2>
+
+        درآمد از
+        <span class="gradient">
+            ایجاد معامله
+        </span>
+
+    </h2>
+
+    <p>
+        مدل درآمدی مرحله اول بر تراکنش موفق
+        متمرکز است و با رشد شبکه می‌تواند
+        به مدل‌های اشتراکی و سازمانی توسعه پیدا کند.
+    </p>
+
+</div>
+
+
+<div class="business">
+
+
+<div class="revenue reveal">
+
+    <div class="revenue-number">
+        01
+    </div>
+
+    <h3>
+        کارمزد تراکنش
+    </h3>
+
+    <p>
+        دریافت درصد مشخصی از سفارش‌هایی
+        که از طریق پلتفرم انجام می‌شوند.
+    </p>
+
+</div>
+
+
+<div class="revenue reveal">
+
+    <div class="revenue-number">
+        02
+    </div>
+
+    <h3>
+        اشتراک صنعتی
+    </h3>
+
+    <p>
+        ارائه داشبورد، مدیریت ظرفیت و
+        امکانات پیشرفته به شرکت‌ها.
+    </p>
+
+</div>
+
+
+<div class="revenue reveal">
+
+    <div class="revenue-number">
+        03
+    </div>
+
+    <h3>
+        خدمات سازمانی
+    </h3>
+
+    <p>
+        راهکار اختصاصی برای کارخانه‌ها،
+        شهرک‌های صنعتی و مجموعه‌های بزرگ.
+    </p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     COMPETITIVE ADVANTAGE
+========================================================= -->
+
+<section>
+
+<div class="container">
+
+
+<div class="section-head reveal">
+
+    <div class="eyebrow">
+        مزیت رقابتی
+    </div>
+
+    <h2>
+
+        ما یک
+        <span class="gradient">
+            دایرکتوری کارخانه‌ها
+        </span>
+
+        نمی‌سازیم.
+
+    </h2>
+
+    <p>
+
+        هدف ایجاد یک بازار دوطرفه است؛
+        جایی که ظرفیت قابل جست‌وجو، قابل مقایسه
+        و در نهایت قابل معامله باشد.
+
+    </p>
+
+</div>
+
+
+<div class="table-wrapper reveal">
+
+<table>
+
+<thead>
+
+<tr>
+
+    <th>
+        قابلیت
+    </th>
+
+    <th>
+        روش سنتی
+    </th>
+
+    <th>
+        دایرکتوری ساده
+    </th>
+
+    <th>
+        ظرفیت
+    </th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+
+<tr>
+
+    <td>
+        نمایش ظرفیت تجهیزات
+    </td>
+
+    <td class="neutral">
+        محدود
+    </td>
+
+    <td class="good">
+        ✓
+    </td>
+
+    <td class="good">
+        ✓ لحظه‌ای
+    </td>
+
+</tr>
+
+
+<tr>
+
+    <td>
+        جست‌وجوی سفارش
+    </td>
+
+    <td class="neutral">
+        دستی
+    </td>
+
+    <td class="neutral">
+        محدود
+    </td>
+
+    <td class="good">
+        ✓
+    </td>
+
+</tr>
+
+
+<tr>
+
+    <td>
+        Matching هوشمند
+    </td>
+
+    <td class="neutral">
+        —
+    </td>
+
+    <td class="neutral">
+        —
+    </td>
+
+    <td class="good">
+        ✓
+    </td>
+
+</tr>
+
+
+<tr>
+
+    <td>
+        مقایسه قیمت
+    </td>
+
+    <td class="neutral">
+        استعلام تلفنی
+    </td>
+
+    <td class="neutral">
+        محدود
+    </td>
+
+    <td class="good">
+        ✓
+    </td>
+
+</tr>
+
+
+<tr>
+
+    <td>
+        امتیاز عملکرد
+    </td>
+
+    <td class="neutral">
+        شخصی
+    </td>
+
+    <td class="neutral">
+        محدود
+    </td>
+
+    <td class="good">
+        ✓
+    </td>
+
+</tr>
+
+
+<tr>
+
+    <td>
+        تحلیل استفاده از ظرفیت
+    </td>
+
+    <td class="neutral">
+        —
+    </td>
+
+    <td class="neutral">
+        —
+    </td>
+
+    <td class="good">
+        ✓
+    </td>
+
+</tr>
+
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     MVP
+========================================================= -->
+
+<section>
+
+<div class="container">
+
+
+<div class="section-head reveal">
+
+    <div class="eyebrow">
+        MVP
+    </div>
+
+    <h2>
+
+        از یک
+        <span class="gradient">
+            مسئله محدود
+        </span>
+
+        شروع می‌کنیم.
+
+    </h2>
+
+    <p>
+
+        برای کاهش ریسک، نسخه اولیه روی چند خدمت
+        صنعتی مشخص و قابل استانداردسازی تمرکز خواهد کرد؛
+        نه همه صنایع به صورت همزمان.
+
+    </p>
+
+</div>
+
+
+<div class="cards">
+
+
+<div class="card reveal">
+
+    <div class="card-icon">
+        ⚙
+    </div>
+
+    <h3>
+        ثبت تجهیزات
+    </h3>
+
+    <p>
+        تعریف ماشین، مشخصات فنی،
+        موقعیت و زمان‌های آزاد.
+    </p>
+
+</div>
+
+
+<div class="card reveal">
+
+    <div class="card-icon">
+        📦
+    </div>
+
+    <h3>
+        ثبت سفارش
+    </h3>
+
+    <p>
+        ثبت فایل، مشخصات قطعه،
+        تیراژ و deadline.
+    </p>
+
+</div>
+
+
+<div class="card reveal">
+
+    <div class="card-icon">
+        🧠
+    </div>
+
+    <h3>
+        Matching
+    </h3>
+
+    <p>
+        پیشنهاد چند ظرفیت مناسب
+        براساس مشخصات سفارش.
+    </p>
+
+</div>
+
+
+<div class="card reveal">
+
+    <div class="card-icon">
+        💬
+    </div>
+
+    <h3>
+        استعلام قیمت
+    </h3>
+
+    <p>
+        امکان ارسال پیشنهاد قیمت
+        و مقایسه تأمین‌کنندگان.
+    </p>
+
+</div>
+
+
+<div class="card reveal">
+
+    <div class="card-icon">
+        ⭐
+    </div>
+
+    <h3>
+        امتیازدهی
+    </h3>
+
+    <p>
+        ثبت سابقه کیفیت،
+        زمان و رضایت مشتری.
+    </p>
+
+</div>
+
+
+<div class="card reveal">
+
+    <div class="card-icon">
+        📊
+    </div>
+
+    <h3>
+        داشبورد ظرفیت
+    </h3>
+
+    <p>
+        مشاهده میزان استفاده،
+        سفارش‌های جاری و ظرفیت آزاد.
+    </p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     ROADMAP
+========================================================= -->
+
+<section id="roadmap">
+
+<div class="container">
+
+
+<div class="section-head reveal">
+
+    <div class="eyebrow">
+        نقشه راه
+    </div>
+
+    <h2>
+
+        ساخت بازار
+        <span class="gradient">
+            مرحله به مرحله
+        </span>
+
+    </h2>
+
+</div>
+
+
+<div class="roadmap">
+
+
+<div class="phase reveal">
+
+    <div class="phase-dot">
+        01
+    </div>
+
+    <h3>
+        اعتبارسنجی
+    </h3>
+
+    <small>
+        ماه ۱ تا ۳
+    </small>
+
+    <p>
+        مصاحبه با صنایع،
+        شناسایی ظرفیت‌ها و
+        انتخاب یک بازار اولیه.
+    </p>
+
+</div>
+
+
+<div class="phase reveal">
+
+    <div class="phase-dot">
+        02
+    </div>
+
+    <h3>
+        MVP
+    </h3>
+
+    <small>
+        ماه ۴ تا ۶
+    </small>
+
+    <p>
+        توسعه پلتفرم،
+        ثبت ظرفیت و سفارش
+        و Matching اولیه.
+    </p>
+
+</div>
+
+
+<div class="phase reveal">
+
+    <div class="phase-dot">
+        03
+    </div>
+
+    <h3>
+        پایلوت صنعتی
+    </h3>
+
+    <small>
+        ماه ۷ تا ۹
+    </small>
+
+    <p>
+        اجرای واقعی با چند
+        واحد صنعتی و جمع‌آوری
+        داده و بازخورد.
+    </p>
+
+</div>
+
+
+<div class="phase reveal">
+
+    <div class="phase-dot">
+        04
+    </div>
+
+    <h3>
+        توسعه شبکه
+    </h3>
+
+    <small>
+        ماه ۱۰ تا ۱۲
+    </small>
+
+    <p>
+        افزایش تأمین‌کنندگان،
+        سفارش‌ها و ورود
+        به صنایع جدید.
+    </p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     KPI
+========================================================= -->
+
+<section>
+
+<div class="container">
+
+
+<div class="section-head reveal">
+
+    <div class="eyebrow">
+        KPI
+    </div>
+
+    <h2>
+
+        شاخص‌های
+        <span class="gradient">
+            موفقیت MVP
+        </span>
+
+    </h2>
+
+    <p>
+        اعداد زیر هدف اولیه هستند و پس از
+        تحقیقات میدانی نهایی خواهند شد.
+    </p>
+
+</div>
+
+
+<div class="kpis">
+
+
+<div class="kpi reveal">
+
+    <div class="kpi-title">
+        ظرفیت‌های ثبت‌شده
+    </div>
+
+    <div class="kpi-value">
+        <span
+            class="counter"
+            data-target="50"
+        >
+            0
+        </span>+
+    </div>
+
+    <div class="kpi-note">
+        هدف اولیه پایلوت
+    </div>
+
+</div>
+
+
+<div class="kpi reveal">
+
+    <div class="kpi-title">
+        سفارش آزمایشی
+    </div>
+
+    <div class="kpi-value">
+        <span
+            class="counter"
+            data-target="100"
+        >
+            0
+        </span>+
+    </div>
+
+    <div class="kpi-note">
+        هدف اولیه MVP
+    </div>
+
+</div>
+
+
+<div class="kpi reveal">
+
+    <div class="kpi-title">
+        تأمین‌کنندگان فعال
+    </div>
+
+    <div class="kpi-value">
+        <span
+            class="counter"
+            data-target="30"
+        >
+            0
+        </span>+
+    </div>
+
+    <div class="kpi-note">
+        هدف اولیه
+    </div>
+
+</div>
+
+
+<div class="kpi reveal">
+
+    <div class="kpi-title">
+        زمان یافتن ظرفیت
+    </div>
+
+    <div class="kpi-value">
+        <span
+            class="counter"
+            data-target="30"
+        >
+            0
+        </span>
+        دقیقه
+    </div>
+
+    <div class="kpi-note">
+        هدف اولیه
+    </div>
+
+</div>
+
+
+<div class="kpi reveal">
+
+    <div class="kpi-title">
+        سفارش‌های موفق
+    </div>
+
+    <div class="kpi-value">
+        80%
+    </div>
+
+    <div class="kpi-note">
+        هدف اولیه پایلوت
+    </div>
+
+</div>
+
+
+<div class="kpi reveal">
+
+    <div class="kpi-title">
+        بازار اولیه
+    </div>
+
+    <div class="kpi-value">
+        B2B
+    </div>
+
+    <div class="kpi-note">
+        خدمات تولید صنعتی
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     RISKS
+========================================================= -->
+
+<section>
+
+<div class="container">
+
+
+<div class="section-head reveal">
+
+    <div class="eyebrow">
+        ریسک‌ها
+    </div>
+
+    <h2>
+
+        بازار دوطرفه سخت است؛
+        <span class="gradient">
+            اما قابل مدیریت است.
+        </span>
+
+    </h2>
+
+</div>
+
+
+<div class="risks">
+
+
+<div class="risk reveal">
+
+    <div class="risk-icon">
+        !
+    </div>
+
+    <div>
+
+        <strong>
+            مشکل مرغ و تخم‌مرغ
+        </strong>
+
+        <p>
+            شروع با یک دسته صنعتی مشخص
+            و جذب همزمان عرضه و تقاضا
+            در یک بازار محدود.
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="risk reveal">
+
+    <div class="risk-icon">
+        !
+    </div>
+
+    <div>
+
+        <strong>
+            اعتماد صنعتی
+        </strong>
+
+        <p>
+            احراز هویت، مدارک، نمونه‌کار،
+            امتیازدهی و سابقه عملکرد.
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="risk reveal">
+
+    <div class="risk-icon">
+        !
+    </div>
+
+    <div>
+
+        <strong>
+            پیچیدگی فنی سفارش
+        </strong>
+
+        <p>
+            شروع با فرآیندهای استاندارد
+            و توسعه تدریجی موتور تطبیق.
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="risk reveal">
+
+    <div class="risk-icon">
+        !
+    </div>
+
+    <div>
+
+        <strong>
+            رقابت و ورود بازیگران جدید
+        </strong>
+
+        <p>
+            ایجاد مزیت از طریق داده،
+            شبکه تأمین‌کنندگان و الگوریتم Matching.
+        </p>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     TEAM
+========================================================= -->
+
+<section>
+
+<div class="container">
+
+
+<div class="section-head reveal">
+
+    <div class="eyebrow">
+        تیم
+    </div>
+
+    <h2>
+
+        یک محصول
+        <span class="gradient">
+            دانشگاهی برای بازار واقعی
+        </span>
+
+    </h2>
+
+    <p>
+        تیم اولیه از توانایی‌های مهندسی نرم‌افزار،
+        هوش مصنوعی و توسعه محصول استفاده می‌کند
+        و برای بخش صنعتی، نیازمند همکاری با منتورها
+        و متخصصان حوزه تولید خواهد بود.
+    </p>
+
+</div>
+
+
+<div class="team reveal">
+
+
+<div class="avatar">
+    CS
+</div>
+
+
+<div>
+
+    <h3>
+        تیم مؤسس
+    </h3>
+
+    <p>
+
+        دانشجوی مهندسی کامپیوتر دانشگاه شهید مدنی
+        با تمرکز بر ساخت پلتفرم‌های نرم‌افزاری،
+        سیستم‌های هوشمند و تبدیل مسائل واقعی
+        به محصولات قابل تجاری‌سازی.
+
+    </p>
+
+
+    <div class="tags">
+
+        <span class="tag">
+            Software Engineering
+        </span>
+
+        <span class="tag">
+            AI / Machine Learning
+        </span>
+
+        <span class="tag">
+            Marketplace
+        </span>
+
+        <span class="tag">
+            Product Development
+        </span>
+
+        <span class="tag">
+            B2B
+        </span>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     PITCH
+========================================================= -->
+
+<section>
+
+<div class="container">
+
+
+<div class="section-head reveal">
+
+    <div class="eyebrow">
+        Pitch در ۶۰ ثانیه
+    </div>
+
+    <h2>
+        مسئله را در
+        <span class="gradient">
+            یک دقیقه
+        </span>
+        توضیح دهیم.
+    </h2>
+
+</div>
+
+
+<div class="pitch reveal">
+
+    <div class="quote">
+        «
+    </div>
+
+    <p>
+
+        تصور کنید یک کارگاه صنعتی یک دستگاه CNC
+        دارد که هر روز چند ساعت بلااستفاده می‌ماند.
+        در همان شهر، شرکتی وجود دارد که برای تولید
+        چندصد قطعه به همین دستگاه نیاز دارد اما
+        تأمین‌کننده مناسب را پیدا نمی‌کند.
+        «ظرفیت» می‌خواهد این دو را به هم متصل کند.
+
+        ما یک Marketplace صنعتی می‌سازیم که در آن
+        ظرفیت خالی ماشین‌آلات قابل مشاهده و قابل
+        جست‌وجو باشد و سفارش‌ها با کمک الگوریتم‌های
+        هوشمند به مناسب‌ترین ظرفیت متصل شوند.
+
+        هدف ما فروش یک نرم‌افزار ساده نیست؛
+        هدف ساخت یک بازار جدید برای استفاده بهتر
+        از دارایی‌های صنعتی موجود است.
+
+    </p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     REQUEST
+========================================================= -->
+
+<section id="request">
+
+<div class="container">
+
+
+<div class="request reveal">
+
+    <div class="eyebrow">
+        درخواست از پارک علم و فناوری
+    </div>
+
+
+    <h2>
+
+        برای تبدیل ظرفیت‌های پنهان
+        به یک
+        <span class="gradient">
+            بازار واقعی
+        </span>
+
+        به یک نقطه شروع نیاز داریم.
+
+    </h2>
+
+
+    <p>
+
+        هدف ما استفاده از ظرفیت پارک علم و فناوری
+        دانشگاه شهید مدنی برای اعتبارسنجی ایده،
+        ساخت MVP، اجرای پایلوت و ایجاد ارتباط
+        با صنایع منطقه است.
+
+    </p>
+
+
+    <div class="request-grid">
+
+
+        <div class="request-item">
+
+            <strong>
+                فضای استقرار
+            </strong>
+
+            <span>
+                دفتر برای تیم توسعه محصول
+            </span>
+
+        </div>
+
+
+        <div class="request-item">
+
+            <strong>
+                منتور صنعتی
+            </strong>
+
+            <span>
+                دسترسی به تجربه صنعت و تولید
+            </span>
+
+        </div>
+
+
+        <div class="request-item">
+
+            <strong>
+                ارتباط با صنعت
+            </strong>
+
+            <span>
+                دسترسی به کارخانه‌ها و کارگاه‌ها
+            </span>
+
+        </div>
+
+
+        <div class="request-item">
+
+            <strong>
+                اجرای پایلوت
+            </strong>
+
+            <span>
+                تست محصول در یک بازار واقعی
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+    <a
+        href="#top"
+        class="btn primary"
+    >
+        شروع مسیر ظرفیت
+        ↑
+    </a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+<div class="container footer">
+
+    <div>
+
+        <strong>
+            ظرفیت | ZARFIAT
+        </strong>
+
+        <p>
+            Industrial Capacity Marketplace
+        </p>
+
+    </div>
+
+    <p>
+        طرح پیشنهادی جهت ارائه به پارک علم و فناوری
+        دانشگاه شهید مدنی
+    </p>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   THEME
+========================================================= */
+
+const theme =
+    document.getElementById("theme");
+
+theme.addEventListener(
+    "click",
+    () => {
+
+        document.body.classList.toggle("light");
+
+        const isLight =
+            document.body.classList.contains("light");
+
+        theme.textContent =
+            isLight ? "☾" : "☼";
+
+        localStorage.setItem(
+            "zarfiat-theme",
+            isLight ? "light" : "dark"
+        );
+
+    }
+);
+
+
+if(
+    localStorage.getItem(
+        "zarfiat-theme"
+    ) === "light"
+){
+
+    document.body.classList.add("light");
+
+    theme.textContent = "☾";
+
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+const reveals =
+    document.querySelectorAll(".reveal");
+
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+                        entry.target
+                            .classList
+                            .add("visible");
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.1
+        }
+    );
+
+
+reveals.forEach(
+    el => observer.observe(el)
+);
+
+
+/* =========================================================
+   COUNTERS
+========================================================= */
+
+const counters =
+    document.querySelectorAll(
+        ".counter"
+    );
+
+let countersStarted = false;
+
+
+function startCounters(){
+
+    if(countersStarted)
+        return;
+
+    countersStarted = true;
+
+
+    counters.forEach(
+        counter => {
+
+            const target =
+                Number(
+                    counter.dataset.target
+                );
+
+            let current = 0;
+
+            const duration = 1200;
+
+            const step =
+                Math.max(
+                    20,
+                    Math.floor(
+                        duration / target
+                    )
+                );
+
+
+            const timer =
+                setInterval(
+                    () => {
+
+                        current++;
+
+                        counter.textContent =
+                            current;
+
+
+                        if(
+                            current >= target
+                        ){
+
+                            counter.textContent =
+                                target;
+
+                            clearInterval(
+                                timer
+                            );
+
+                        }
+
+                    },
+                    step
+                );
+
+        }
+    );
+
+}
+
+
+const kpis =
+    document.querySelector(".kpis");
+
+
+const kpiObserver =
+    new IntersectionObserver(
+        entries => {
+
+            if(
+                entries[0].isIntersecting
+            ){
+
+                startCounters();
+
+                kpiObserver.disconnect();
+
+            }
+
+        },
+        {
+            threshold:.2
+        }
+    );
+
+
+if(kpis){
+
+    kpiObserver.observe(kpis);
+
+}
+
+
+/* =========================================================
+   SMOOTH ANCHORS
+========================================================= */
+
+document
+    .querySelectorAll(
+        'a[href^="#"]'
+    )
+    .forEach(
+        link => {
+
+            link.addEventListener(
+                "click",
+                function(event){
+
+                    const id =
+                        this.getAttribute(
+                            "href"
+                        );
+
+                    if(
+                        id === "#" ||
+                        !document.querySelector(id)
+                    ){
+                        return;
+                    }
+
+                    event.preventDefault();
+
+
+                    const target =
+                        document.querySelector(
+                            id
+                        );
+
+
+                    const offset = 78;
+
+
+                    const position =
+                        target
+                            .getBoundingClientRect()
+                            .top
+                        +
+                        window.scrollY
+                        -
+                        offset;
+
+
+                    window.scrollTo({
+                        top:position,
+                        behavior:"smooth"
+                    });
+
+                }
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   KEYBOARD PRINT
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(
+            event.key.toLowerCase() === "p" &&
+            !event.ctrlKey &&
+            !event.metaKey
+        ){
+
+            window.print();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
